@@ -1,4 +1,6 @@
-const fruitScehma = new mongoose.Schema({
+import mongoose from 'mongoose'
+
+const fruitSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -13,4 +15,6 @@ const fruitScehma = new mongoose.Schema({
     }
 })
 
-const Fruit = mongoose.model()
+const Fruit = mongoose.model("fruit", fruitSchema, "fruits")
+
+export default Fruit
