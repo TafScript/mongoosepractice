@@ -22,6 +22,7 @@ app.get('/fruits/:id', async (req, res) => {
 })
 
 app.post('/fruits', async (req, res) =>{
+    await Fruit.create(req.body)
     const fruitDoc = new Fruit(req,body)
     const result = await fruitDoc.save()
     res.json(result);
